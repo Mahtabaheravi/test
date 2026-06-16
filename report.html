@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#e8f6e9;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:240px;
+    background:#0d330e;
+    color:#ffefb3;
+    padding:25px 15px;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:50px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:12px;
+}
+
+.menu li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#ffefb3;
+    padding:12px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#ffefb3;
+    color:#0d330e;
+}
+
+.menu li a i{
+    width:20px;
+    text-align:center;
+}
+
+/* Main Content */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:25px;
+    box-sizing: border-box;
+}
+.report-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.export-btn{
+    background:#0d330e;
+    color:#ffefb3;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.summary-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.summary-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.summary-card h3{
+    color:#0d330e;
+    font-size:32px;
+}
+
+.summary-card p{
+    color:#666;
+}
+
+.report-filters{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.report-filters input,
+.report-filters select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.generate-btn{
+    background:#0d330e;
+    color:#ffefb3;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+}
+
+.analytics-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.chart-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.chart-placeholder{
+    height:250px;
+    margin-top:15px;
+    border:3px dashed #0d330e;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    color:#0d330e;
+}
+
+.department-report{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.department-item{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.activity-section{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.activity-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.dot{
+    width:14px;
+    height:14px;
+    background:#0d330e;
+    border-radius:50%;
+}
+
+</style>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+    
+        <aside class="sidebar">
+    
+            <div class="logo">
+                <img src="pic/medical-logo-template-with-green-leaves-free-png.png" alt="">
+                <span>HealthCare</span>
+            </div>
+    
+            <ul class="menu">
+    
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="doctors.html">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Doctors
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="patients.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Patients
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="appointment.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Appointments
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="payment.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Payments
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="report.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Reports
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="setting.html">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+    
+            </ul>
+    
+        </aside>
+    
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <section class="reports-section">
+            
+                <div class="report-header">
+            
+                    <div>
+                        <h2>Reports & Analytics</h2>
+                        <p>Home > Reports</p>
+                    </div>
+            
+                    <button class="export-btn">
+                        <i class="fa-solid fa-file-export"></i>
+                        Export Report
+                    </button>
+            
+                </div>
+            
+                <!-- Summary Cards -->
+            
+                <div class="summary-cards">
+            
+                    <div class="summary-card">
+                        <h3>1,254</h3>
+                        <p>Total Patients</p>
+                    </div>
+            
+                    <div class="summary-card">
+                        <h3>42</h3>
+                        <p>Total Doctors</p>
+                    </div>
+            
+                    <div class="summary-card">
+                        <h3>856</h3>
+                        <p>Appointments</p>
+                    </div>
+            
+                    <div class="summary-card">
+                        <h3>$45,200</h3>
+                        <p>Total Revenue</p>
+                    </div>
+            
+                </div>
+            
+                <!-- Filters -->
+            
+                <div class="report-filters">
+            
+                    <input type="date">
+            
+                    <input type="date">
+            
+                    <select>
+                        <option>All Departments</option>
+                        <option>Cardiology</option>
+                        <option>Neurology</option>
+                    </select>
+            
+                    <button class="generate-btn">
+                        Generate Report
+                    </button>
+            
+                </div>
+            
+                <!-- Analytics -->
+            
+                <div class="analytics-grid">
+            
+                    <div class="chart-card">
+            
+                        <h3>Monthly Revenue</h3>
+            
+                        <div class="chart-placeholder">
+                            Revenue Chart
+                        </div>
+            
+                    </div>
+            
+                    <div class="chart-card">
+            
+                        <h3>Patient Growth</h3>
+            
+                        <div class="chart-placeholder">
+                            Patient Growth Chart
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+                <!-- Departments -->
+            
+                <div class="department-report">
+            
+                    <h3>Top Departments</h3>
+            
+                    <div class="department-item">
+                        <span>Cardiology</span>
+                        <strong>356 Patients</strong>
+                    </div>
+            
+                    <div class="department-item">
+                        <span>Neurology</span>
+                        <strong>274 Patients</strong>
+                    </div>
+            
+                    <div class="department-item">
+                        <span>Orthopedics</span>
+                        <strong>198 Patients</strong>
+                    </div>
+            
+                </div>
+            
+                <!-- Activity Timeline -->
+            
+                <div class="activity-section">
+            
+                    <h3>Recent Activities</h3>
+            
+                    <div class="activity-item">
+                        <div class="dot"></div>
+                        <p>New patient registered</p>
+                    </div>
+            
+                    <div class="activity-item">
+                        <div class="dot"></div>
+                        <p>Payment completed - $450</p>
+                    </div>
+            
+                    <div class="activity-item">
+                        <div class="dot"></div>
+                        <p>Appointment scheduled</p>
+                    </div>
+            
+                </div>
+            
+            </section>
+            
+            </main>
+    
+</body>
+</html>
