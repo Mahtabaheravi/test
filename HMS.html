@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="pic/abstract-wings-cross-healthcare-icon_1034893-5577.jpg" alt="">
+            <span>HealthCare</span>
+        </div>
+
+        <ul class="menu">
+            <li>
+                <a href="HMS.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="doctors.html">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    Doctors
+                </a>
+            </li>
+            <li>
+                <a href="patients.html">
+                    <i class="fa-solid fa-bed"></i>
+                    Patients
+                </a>
+            </li>
+            <li>
+                <a href="appointment.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Appointments
+                </a>
+            </li>
+            <li>
+                <a href="payment.html">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payments
+                </a>
+            </li>
+            <li>
+                <a href="report.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Reports
+                </a>
+            </li>
+            <li>
+                <a href="setting.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div>
+                <h2>Hello, Admin</h2>
+                <p>Welcome back to your dashboard</p>
+            </div>
+            <div class="top-right">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <div class="admin-box">
+
+                    <img src="pic/dr.-yoon-sung-soo.png" alt="">
+                
+                    <div class="admin-info">
+                        <h4>Admin</h4>
+                        <p>Hospital Manager</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        
+
+        <section class="cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <h3>Total Patients</h3>
+                <h1>1,465</h1>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <h3>Total Doctors</h3>
+                <h1>48</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <h3>Appointments</h3>
+                <h1>356</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <h3>Total Revenue</h3>
+                <h1>$12,540</h1>
+            </div>
+        </section>
+
+        
+
+        <section class="chart-card">
+            <div class="section-header">
+                <h2>Patient Statistics</h2>
+            </div>
+            <div class="legend">
+                <div>
+                    <span class="male-box"></span>
+                    Male
+                </div>
+                <div>
+                    <span class="female-box"></span>
+                    Female
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <div class="y-axis">
+                    <span>250</span>
+                    <span>200</span>
+                    <span>150</span>
+                    <span>100</span>
+                    <span>50</span>
+                    <span>0</span>
+                </div>
+                <div class="chart">
+                    <div class="bar-group">
+                        <div class="bars">
+                            <div class="bar-column">
+                                <div class="value">120</div>
+                                <div class="bar male" style="height:120px;"></div>
+                            </div>
+                            <div class="bar-column">
+                                <div class="value">90</div>
+                                <div class="bar female" style="height:90px;"></div>
+                            </div>
+                        </div>
+                        <span class="month">Jan</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bars">
+                            <div class="bar-column">
+                                <div class="value">180</div>
+                                <div class="bar male" style="height:180px;"></div>
+                            </div>
+                            <div class="bar-column">
+                                <div class="value">140</div>
+                                <div class="bar female" style="height:140px;"></div>
+                            </div>
+                        </div>
+                        <span class="month">Feb</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bars">
+                            <div class="bar-column">
+                                <div class="value">220</div>
+                                <div class="bar male" style="height:220px;"></div>
+                            </div>
+                            <div class="bar-column">
+                                <div class="value">170</div>
+                                <div class="bar female" style="height:170px;"></div>
+                            </div>
+                        </div>
+                        <span class="month">Mar</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bars">
+                            <div class="bar-column">
+                                <div class="value">190</div>
+                                <div class="bar male" style="height:190px;"></div>
+                            </div>
+                            <div class="bar-column">
+                                <div class="value">150</div>
+                                <div class="bar female" style="height:150px;"></div>
+                            </div>
+                        </div>
+                        <span class="month">Apr</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>
