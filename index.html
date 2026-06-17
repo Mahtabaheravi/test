@@ -9,6 +9,32 @@
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Months', 'Female', 'Male'],
+          ['Jan',  70,      50],
+          ['Feb',  180,      70],
+          ['Mar',  95,       100],
+          ['Apr',  120,      100]
+        ]);
+
+        var options = {
+          title: 'Monthly Patient',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
 
@@ -125,89 +151,10 @@
                 <h1>$12,540</h1>
             </div>
         </section>
-
+        <div id="curve_chart" ></div>
         
 
-        <section class="chart-card">
-            <div class="section-header">
-                <h2>Patient Statistics</h2>
-            </div>
-            <div class="legend">
-                <div>
-                    <span class="male-box"></span>
-                    Male
-                </div>
-                <div>
-                    <span class="female-box"></span>
-                    Female
-                </div>
-            </div>
-
-            <div class="chart-wrapper">
-                <div class="y-axis">
-                    <span>250</span>
-                    <span>200</span>
-                    <span>150</span>
-                    <span>100</span>
-                    <span>50</span>
-                    <span>0</span>
-                </div>
-                <div class="chart">
-                    <div class="bar-group">
-                        <div class="bars">
-                            <div class="bar-column">
-                                <div class="value">120</div>
-                                <div class="bar male" style="height:120px;"></div>
-                            </div>
-                            <div class="bar-column">
-                                <div class="value">90</div>
-                                <div class="bar female" style="height:90px;"></div>
-                            </div>
-                        </div>
-                        <span class="month">Jan</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bars">
-                            <div class="bar-column">
-                                <div class="value">180</div>
-                                <div class="bar male" style="height:180px;"></div>
-                            </div>
-                            <div class="bar-column">
-                                <div class="value">140</div>
-                                <div class="bar female" style="height:140px;"></div>
-                            </div>
-                        </div>
-                        <span class="month">Feb</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bars">
-                            <div class="bar-column">
-                                <div class="value">220</div>
-                                <div class="bar male" style="height:220px;"></div>
-                            </div>
-                            <div class="bar-column">
-                                <div class="value">170</div>
-                                <div class="bar female" style="height:170px;"></div>
-                            </div>
-                        </div>
-                        <span class="month">Mar</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bars">
-                            <div class="bar-column">
-                                <div class="value">190</div>
-                                <div class="bar male" style="height:190px;"></div>
-                            </div>
-                            <div class="bar-column">
-                                <div class="value">150</div>
-                                <div class="bar female" style="height:150px;"></div>
-                            </div>
-                        </div>
-                        <span class="month">Apr</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
     </main>
 </div>
 </body>

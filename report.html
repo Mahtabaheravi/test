@@ -95,6 +95,9 @@ body{
     padding:25px;
     box-sizing: border-box;
 }
+
+
+/* HEADER */
 .report-header{
     display:flex;
     justify-content:space-between;
@@ -102,15 +105,30 @@ body{
     margin-bottom:25px;
 }
 
+.report-header h2{
+    color:#0d330e;
+}
+
+.report-header p{
+    color:#777;
+    font-size:14px;
+}
+
 .export-btn{
     background:#0d330e;
     color:#ffefb3;
     border:none;
-    padding:12px 20px;
-    border-radius:12px;
+    padding:12px 18px;
+    border-radius:10px;
     cursor:pointer;
+    transition:.3s;
 }
 
+.export-btn:hover{
+    background:#145017;
+}
+
+/* SUMMARY CARDS */
 .summary-cards{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -119,30 +137,39 @@ body{
 }
 
 .summary-card{
-    background:white;
-    padding:25px;
-    border-radius:20px;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
     text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    border-top:5px solid #0d330e;
+    transition:.3s;
+}
+
+.summary-card:hover{
+    transform:translateY(-3px);
 }
 
 .summary-card h3{
     color:#0d330e;
-    font-size:32px;
+    font-size:28px;
 }
 
 .summary-card p{
     color:#666;
+    font-size:14px;
 }
 
+/* FILTERS */
 .report-filters{
-    background:white;
-    padding:20px;
-    border-radius:20px;
+    background:#fff;
+    padding:18px;
+    border-radius:15px;
     display:flex;
-    gap:15px;
+    gap:30px;
+    flex-wrap:wrap;
     margin-bottom:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .report-filters input,
@@ -150,16 +177,32 @@ body{
     padding:12px;
     border:1px solid #ddd;
     border-radius:10px;
+    outline:none;
+    transition:.3s;
 }
 
+.report-filters input:focus,
+.report-filters select:focus{
+    border-color:#0d330e;
+    box-shadow:0 0 0 3px rgba(13,51,14,0.1);
+}
+
+/* BUTTON */
 .generate-btn{
     background:#0d330e;
     color:#ffefb3;
     border:none;
-    padding:12px 20px;
+    padding:12px 18px;
     border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
 }
 
+.generate-btn:hover{
+    background:#145017;
+}
+
+/* ANALYTICS GRID */
 .analytics-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -167,57 +210,141 @@ body{
     margin-bottom:25px;
 }
 
+/* CHART CARD */
 .chart-card{
-    background:white;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-}
-
-.chart-placeholder{
-    height:250px;
-    margin-top:15px;
-    border:3px dashed #0d330e;
+    background:#fff;
+    padding:20px;
     border-radius:15px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    color:#0d330e;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    border-top:5px solid #0d330e;
+    transition:.3s;
 }
 
+.chart-card:hover{
+    transform:translateY(-3px);
+}
+
+.chart-card h3{
+    color:#0d330e;
+    margin-bottom:10px;
+}
+
+/* MINI CHART */
+.mini-chart{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    height:220px;
+    padding:10px 5px;
+}
+
+.bar{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    gap:8px;
+}
+
+.bar span{
+    width:28px;
+    background:#0d330e;
+    border-radius:8px;
+
+    /* مهم: anchor از پایین */
+    transform-origin: bottom;
+
+    /* شروع از صفر ارتفاع */
+    transform: scaleY(0);
+
+    /* انیمیشن */
+    animation: growColumn 1s ease-out forwards;
+}
+
+/* delay برای هر ستون (حس واقعی dashboard) */
+.bar:nth-child(1) span{ animation-delay:0.1s; }
+.bar:nth-child(2) span{ animation-delay:0.2s; }
+.bar:nth-child(3) span{ animation-delay:0.3s; }
+.bar:nth-child(4) span{ animation-delay:0.4s; }
+.bar:nth-child(5) span{ animation-delay:0.5s; }
+.bar:nth-child(6) span{ animation-delay:0.6s; }
+
+@keyframes growColumn{
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+
+.bar p{
+    font-size:12px;
+    color:#666;
+}
+
+/* PLACEHOLDER */
+.chart-placeholder{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px dashed #0d330e;
+    border-radius:12px;
+    color:#0d330e;
+    font-weight:600;
+    opacity:0.8;
+}
+
+/* DEPARTMENT */
 .department-report{
-    background:white;
-    padding:25px;
-    border-radius:20px;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
     margin-bottom:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.department-report h3{
+    color:#0d330e;
+    margin-bottom:10px;
 }
 
 .department-item{
     display:flex;
     justify-content:space-between;
-    padding:15px 0;
+    padding:14px 0;
     border-bottom:1px solid #eee;
 }
 
+.department-item:last-child{
+    border-bottom:none;
+}
+
+/* ACTIVITY */
 .activity-section{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.activity-section h3{
+    color:#0d330e;
+    margin-bottom:10px;
 }
 
 .activity-item{
     display:flex;
     align-items:center;
-    gap:15px;
-    margin-top:15px;
+    gap:12px;
+    margin-top:14px;
 }
 
 .dot{
-    width:14px;
-    height:14px;
+    width:12px;
+    height:12px;
     background:#0d330e;
     border-radius:50%;
 }
@@ -232,7 +359,7 @@ body{
         <aside class="sidebar">
     
             <div class="logo">
-                <img src="pic/medical-logo-template-with-green-leaves-free-png.png" alt="">
+                <img src="pic/abstract-wings-cross-healthcare-icon_1034893-5577.jpg" alt="">
                 <span>HealthCare</span>
             </div>
     
@@ -294,143 +421,158 @@ body{
         <!-- Main Content -->
         <main class="main-content">
 
-            <section class="reports-section">
-            
-                <div class="report-header">
-            
-                    <div>
-                        <h2>Reports & Analytics</h2>
-                        <p>Home > Reports</p>
-                    </div>
-            
-                    <button class="export-btn">
-                        <i class="fa-solid fa-file-export"></i>
-                        Export Report
-                    </button>
-            
+            <div class="report-header">
+                <div>
+                    <h2>Reports & Analytics</h2>
+                    <p>Home > Reports</p>
                 </div>
-            
-                <!-- Summary Cards -->
-            
-                <div class="summary-cards">
-            
-                    <div class="summary-card">
-                        <h3>1,254</h3>
-                        <p>Total Patients</p>
-                    </div>
-            
-                    <div class="summary-card">
-                        <h3>42</h3>
-                        <p>Total Doctors</p>
-                    </div>
-            
-                    <div class="summary-card">
-                        <h3>856</h3>
-                        <p>Appointments</p>
-                    </div>
-            
-                    <div class="summary-card">
-                        <h3>$45,200</h3>
-                        <p>Total Revenue</p>
-                    </div>
-            
+        
+                <button class="export-btn">
+                    <i class="fa-solid fa-file-export"></i>
+                    Export Report
+                </button>
+            </div>
+        
+            <!-- SUMMARY CARDS -->
+            <div class="summary-cards">
+        
+                <div class="summary-card">
+                    <h3>1,254</h3>
+                    <p>Total Patients</p>
                 </div>
-            
-                <!-- Filters -->
-            
-                <div class="report-filters">
-            
-                    <input type="date">
-            
-                    <input type="date">
-            
-                    <select>
-                        <option>All Departments</option>
-                        <option>Cardiology</option>
-                        <option>Neurology</option>
-                    </select>
-            
-                    <button class="generate-btn">
-                        Generate Report
-                    </button>
-            
+        
+                <div class="summary-card">
+                    <h3>42</h3>
+                    <p>Total Doctors</p>
                 </div>
-            
-                <!-- Analytics -->
-            
-                <div class="analytics-grid">
-            
-                    <div class="chart-card">
-            
-                        <h3>Monthly Revenue</h3>
-            
-                        <div class="chart-placeholder">
-                            Revenue Chart
+        
+                <div class="summary-card">
+                    <h3>856</h3>
+                    <p>Appointments</p>
+                </div>
+        
+                <div class="summary-card">
+                    <h3>$45,200</h3>
+                    <p>Total Revenue</p>
+                </div>
+        
+            </div>
+        
+            <!-- FILTERS -->
+            <div class="report-filters">
+        
+                <input type="date">
+                <input type="date">
+        
+                <select>
+                    <option>All Departments</option>
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                </select>
+        
+                <button class="generate-btn">
+                    Generate Report
+                </button>
+        
+            </div>
+        
+            <!-- ANALYTICS -->
+            <div class="analytics-grid">
+        
+                <!-- MONTHLY REVENUE CHART -->
+                <div class="chart-card">
+                    <h3>Monthly Revenue</h3>
+        
+                    <div class="mini-chart">
+        
+                        <div class="bar">
+                            <span style="--h:70%"></span>
+                            <p>Jan</p>
                         </div>
-            
-                    </div>
-            
-                    <div class="chart-card">
-            
-                        <h3>Patient Growth</h3>
-            
-                        <div class="chart-placeholder">
-                            Patient Growth Chart
+        
+                        <div class="bar">
+                            <span style="height:45%"></span>
+                            <p>Feb</p>
                         </div>
-            
+        
+                        <div class="bar">
+                            <span style="height:75%"></span>
+                            <p>Mar</p>
+                        </div>
+        
+                        <div class="bar">
+                            <span style="height:55%"></span>
+                            <p>Apr</p>
+                        </div>
+        
+                        <div class="bar">
+                            <span style="height:90%"></span>
+                            <p>May</p>
+                        </div>
+        
+                        <div class="bar">
+                            <span style="height:70%"></span>
+                            <p>Jun</p>
+                        </div>
+        
                     </div>
-            
                 </div>
-            
-                <!-- Departments -->
-            
-                <div class="department-report">
-            
-                    <h3>Top Departments</h3>
-            
-                    <div class="department-item">
-                        <span>Cardiology</span>
-                        <strong>356 Patients</strong>
+        
+                <!-- PATIENT GROWTH (NO REAL CHART) -->
+                <div class="chart-card">
+                    <h3>Patient Growth</h3>
+        
+                    <div class="chart-placeholder">
+                        Patient Growth Overview
                     </div>
-            
-                    <div class="department-item">
-                        <span>Neurology</span>
-                        <strong>274 Patients</strong>
-                    </div>
-            
-                    <div class="department-item">
-                        <span>Orthopedics</span>
-                        <strong>198 Patients</strong>
-                    </div>
-            
                 </div>
-            
-                <!-- Activity Timeline -->
-            
-                <div class="activity-section">
-            
-                    <h3>Recent Activities</h3>
-            
-                    <div class="activity-item">
-                        <div class="dot"></div>
-                        <p>New patient registered</p>
-                    </div>
-            
-                    <div class="activity-item">
-                        <div class="dot"></div>
-                        <p>Payment completed - $450</p>
-                    </div>
-            
-                    <div class="activity-item">
-                        <div class="dot"></div>
-                        <p>Appointment scheduled</p>
-                    </div>
-            
+        
+            </div>
+        
+            <!-- TOP DEPARTMENTS -->
+            <div class="department-report">
+        
+                <h3>Top Departments</h3>
+        
+                <div class="department-item">
+                    <span>Cardiology</span>
+                    <strong>356 Patients</strong>
                 </div>
-            
-            </section>
-            
-            </main>
-    
+        
+                <div class="department-item">
+                    <span>Neurology</span>
+                    <strong>274 Patients</strong>
+                </div>
+        
+                <div class="department-item">
+                    <span>Orthopedics</span>
+                    <strong>198 Patients</strong>
+                </div>
+        
+            </div>
+        
+            <!-- ACTIVITY -->
+            <div class="activity-section">
+        
+                <h3>Recent Activities</h3>
+        
+                <div class="activity-item">
+                    <div class="dot"></div>
+                    <p>New patient registered</p>
+                </div>
+        
+                <div class="activity-item">
+                    <div class="dot"></div>
+                    <p>Payment completed - $450</p>
+                </div>
+        
+                <div class="activity-item">
+                    <div class="dot"></div>
+                    <p>Appointment scheduled</p>
+                </div>
+        
+            </div>
+        
+        </main>
 </body>
 </html>
