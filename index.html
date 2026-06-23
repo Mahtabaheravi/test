@@ -10,31 +10,7 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Months', 'Female', 'Male'],
-          ['Jan',  70,      50],
-          ['Feb',  180,      70],
-          ['Mar',  95,       100],
-          ['Apr',  120,      100]
-        ]);
-
-        var options = {
-          title: 'Monthly Patient',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-    </script>
 </head>
 <body>
 
@@ -151,7 +127,211 @@
                 <h1>$12,540</h1>
             </div>
         </section>
-        <div id="curve_chart" ></div>
+        <div class="dashboard-container">
+            <div class="card appointments">
+        
+                <div class="card-header">
+                    <h3>Upcoming Appointments</h3>
+                    <button>View All</button>
+                </div>
+        
+                <div class="appointment">
+        
+                    <div class="avatar">Z</div>
+        
+                    <div>
+                        <h4>Zahra Rahimai</h4>
+                        <small>Kabul ,Afghanistan</small>
+                    </div>
+        
+                    <div>
+                        <strong>Appointment With</strong>
+                        <p>Dr. John Smith</p>
+                    </div>
+        
+                    <div>
+                        <strong>Timing</strong>
+                        <p>7:00 PM</p>
+                    </div>
+        
+                    <button class="take-btn">Take Up</button>
+        
+                </div>
+        
+                <div class="appointment">
+        
+                    <div class="avatar">B</div>
+        
+                    <div>
+                        <h4>Baran Nazari</h4>
+                        <small>New York, USA</small>
+                    </div>
+        
+                    <div>
+                        <strong>Appointment With</strong>
+                        <p>Dr. John Smith</p>
+                    </div>
+        
+                    <div>
+                        <strong>Timing</strong>
+                        <p>7:00 PM</p>
+                    </div>
+        
+                    <button class="take-btn">Take Up</button>
+        
+                </div>
+        
+            </div>
+        
+            <div class="card doctors">
+        
+                <div class="card-header">
+                    <h3>Doctors</h3>
+                </div>
+        
+                <div class="doctor-list">
+        
+                    <div class="doctor">
+                        <img src="pic/doctor-reg.png">
+                        <div>
+                            <h4>Dr. Michael Lee</h4>
+                            <small>MBBS, MD</small>
+                        </div>
+                    </div>
+        
+                    <div class="doctor">
+                        <img src="pic/360_F_1618191011_GmBZxuwx0z7OlMgbctXXj5EAzP5Z2PY6.jpg">
+                        <div>
+                            <h4>Dr. Sarah Wilson</h4>
+                            <small>MD</small>
+                        </div>
+                    </div>
+        
+                    <div class="doctor">
+                        <img src="pic/360_F_1886183583_IHGDXNGjDXc7Vq7QLD4hKasTVbdhCb5G.jpg">
+                        <div>
+                            <h4>Dr. Emma Brown</h4>
+                            <small>MBBS</small>
+                        </div>
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+        
+        
+        <div class="bottom-section">
+            <div class="card patients">
+        
+                <div class="card-header">
+                    <h3>New Patients</h3>
+                    <button>View All</button>
+                </div>
+        
+                <table>
+        
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                    </tr>
+        
+                    <tr>
+                        <td>Ahmad Khan</td>
+                        <td>Ahmad@gmail.com</td>
+                        <td>+93784329876</td>
+                        <td><span class="badge yellow">Fever</span></td>
+                    </tr>
+        
+                    <tr>
+                        <td>Fatima Noor</td>
+                        <td>Fatima@yahoo.com</td>
+                        <td>+93025550127</td>
+                        <td><span class="badge red">Cancer</span></td>
+                    </tr>
+        
+                    <tr>
+                        <td>Ekram Jalali</td>
+                        <td>Ekram@yahoo.com</td>
+                        <td>+93025550106</td>
+                        <td><span class="badge green">Eye</span></td>
+                    </tr>
+        
+                </table>
+        
+            </div>
+        
+        
+        <div class="hospital-management card">
+
+            <div class="card-header">
+                <h3>Hospital Management</h3>
+            </div>
+        
+            <div class="management-content">
+        
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>OPD</span>
+                        <span>16%</span>
+                    </div>
+        
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:16%"></div>
+                    </div>
+                </div>
+        
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>NEW PATIENT</span>
+                        <span>79%</span>
+                    </div>
+        
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:79%"></div>
+                    </div>
+                </div>
+        
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>LABORATORY TEST</span>
+                        <span>82%</span>
+                    </div>
+        
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:82%"></div>
+                    </div>
+                </div>
+        
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>TREATMENT</span>
+                        <span>67%</span>
+                    </div>
+        
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:67%"></div>
+                    </div>
+                </div>
+        
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>DISCHARGE</span>
+                        <span>30%</span>
+                    </div>
+        
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:30%"></div>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+        </div>
         
 
         

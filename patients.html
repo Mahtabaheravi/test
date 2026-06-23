@@ -123,6 +123,10 @@ body{
     font-weight:bold;
     transition:.3s;
 }
+.add-patient-btn a{
+    text-decoration: none;
+    color:#ffefb3;
+}
 
 .add-patient-btn:hover{
     background:#145017;
@@ -246,11 +250,20 @@ tbody tr:hover{
     gap:10px;
 }
 
-.patient-info img{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    object-fit:cover;
+
+.patient-avatar{
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d330e;
+    color: #ffefb3;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
 }
 
 .active{
@@ -498,7 +511,7 @@ tbody tr:hover{
             
                                 <td>
                                     <div class="patient-info">
-                                        <img src="pic/portrait-british-elderly-man_53876-153506.jpg" alt="">
+                                        <div class="patient-avatar">AK</div>
                                         <span>Ahmad Khan</span>
                                     </div>
                                 </td>
@@ -513,7 +526,7 @@ tbody tr:hover{
                                 </td>
             
                                 <td class="actions">
-                                    <i class="fa-solid fa-eye"></i>
+                                    <a href="patient-profile.html"><i class="fa-solid fa-eye"></i></a>
                                     <i class="fa-solid fa-pen"></i>
                                     <i class="fa-solid fa-trash"></i>
                                 </td>
@@ -526,7 +539,7 @@ tbody tr:hover{
             
                                 <td>
                                     <div class="patient-info">
-                                        <img src="pic/waist-up-portrait-cheerful-attractive-modern-woman-with-bun-smiling-broadly-camera-expressing-positive-emotions_176420-17181.jpg" alt="">
+                                        <div class="patient-avatar">FN</div>
                                         <span>Fatima Noor</span>
                                     </div>
                                 </td>
@@ -554,7 +567,7 @@ tbody tr:hover{
             
                                 <td>
                                     <div class="patient-info">
-                                        <img src="pic/year-old-senior-man-standing-isolated-white-background-129609137.jpg" alt="">
+                                        <div class="patient-avatar">AH</div>
                                         <span>Ali Hassan</span>
                                     </div>
                                 </td>
@@ -582,7 +595,7 @@ tbody tr:hover{
             
                                 <td>
                                     <div class="patient-info">
-                                        <img src="pic/old-woman-smiling_1149-203.jpg" alt="">
+                                        <div class="patient-avatar">ZA</div>
                                         <span>Zahra Ali</span>
                                     </div>
                                 </td>

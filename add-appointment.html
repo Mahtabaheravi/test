@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#e8f6e9;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* menu */
+
+.sidebar{
+    width:240px;
+    background:#0d330e;
+    color:#ffefb3;
+    padding:25px 15px;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:50px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:12px;
+}
+
+.menu li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#ffefb3;
+    padding:12px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#ffefb3;
+    color:#0d330e;
+}
+
+.menu li a i{
+    width:20px;
+    text-align:center;
+}
+
+/* main */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:20px;
+    box-sizing: border-box;
+}
+.appointment-page{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.page-header h2{
+    color:#0d330e;
+    margin-bottom:5px;
+}
+
+.page-header p{
+    color:#777;
+}
+
+.appointment-card{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.appointment-card h3{
+    color:#0d330e;
+    margin-bottom:25px;
+}
+
+.appointment-form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    color:#0d330e;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#0d330e;
+}
+
+.form-group textarea{
+    height:120px;
+    resize:none;
+}
+
+.full-width{
+    grid-column:1 / -1;
+}
+
+.save-btn{
+    background:#0d330e;
+    color:#ffefb3;
+    border:none;
+    padding:14px 25px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.save-btn:hover{
+    background:#145017;
+}
+</style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="pic/abstract-wings-cross-healthcare-icon_1034893-5577.jpg" alt="">
+                <span>HealthCare</span>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="doctors.html">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Doctors
+                    </a>
+                </li>
+                <li>
+                    <a href="patients.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Patients
+                    </a>
+                </li>
+                <li>
+                    <a href="appointment.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Appointments
+                    </a>
+                </li>
+                <li>
+                    <a href="patients.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="appointment-page">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Add Appointment</h2>
+                        <p>Home > Appointments > Add Appointment</p>
+                    </div>
+                </div>
+            
+                <div class="appointment-card">
+            
+                    <h3>Appointment Information</h3>
+            
+                    <form class="appointment-form">
+            
+                        <div class="form-group">
+                            <label>Patient Name</label>
+                            <input type="text" placeholder="Enter patient name">
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Patient ID</label>
+                            <input type="text" placeholder="Enter patient ID">
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Select Doctor</label>
+                            <select>
+                                <option>Choose Doctor</option>
+                                <option>Dr. Sarah Johnson</option>
+                                <option>Dr. Michael Brown</option>
+                                <option>Dr. David Wilson</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Department</label>
+                            <select>
+                                <option>Choose Department</option>
+                                <option>Cardiology</option>
+                                <option>Neurology</option>
+                                <option>Orthopedics</option>
+                                <option>Dermatology</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Appointment Date</label>
+                            <input type="date">
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Appointment Time</label>
+                            <input type="time">
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Appointment Type</label>
+                            <select>
+                                <option>Consultation</option>
+                                <option>Follow Up</option>
+                                <option>Emergency</option>
+                                <option>Checkup</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select>
+                                <option>Scheduled</option>
+                                <option>Pending</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group full-width">
+                            <label>Notes</label>
+                            <textarea placeholder="Appointment notes"></textarea>
+                        </div>
+            
+                        <div class="full-width">
+                            <button type="submit" class="save-btn">
+                                <i class="fa-solid fa-calendar-plus"></i>
+                                Create Appointment
+                            </button>
+                        </div>
+            
+                    </form>
+            
+                </div>
+            
+            </div>
+        </main>
+</body>
+</html>

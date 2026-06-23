@@ -1,0 +1,367 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#e8f6e9;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* menu */
+
+.sidebar{
+    width:240px;
+    background:#0d330e;
+    color:#ffefb3;
+    padding:25px 15px;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:50px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:12px;
+}
+
+.menu li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#ffefb3;
+    padding:12px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#ffefb3;
+    color:#0d330e;
+}
+
+.menu li a i{
+    width:20px;
+    text-align:center;
+}
+
+/* main */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:20px;
+    box-sizing: border-box;
+}
+.page-header{
+    margin-bottom:20px;
+    
+}
+
+.page-header h2{
+    color:#0d330e;
+}
+
+.page-header p{
+    color:#666;
+    margin-top:5px;
+}
+
+.appointment-overview{
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 12px rgba(29, 75, 29, 0.8);
+    border-left:6px solid #0d330e;
+    margin-bottom:20px;
+}
+
+.appointment-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.avatar{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#0d330e;
+    color:#ffefb3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.patient-details h2{
+    color:#0d330e;
+    margin-bottom:8px;
+}
+
+.patient-details p{
+    color:#666;
+    margin-bottom:5px;
+}
+
+.appointment-right{
+    text-align:right;
+}
+
+.status{
+    background:#e8f6e9;
+    color:#0d330e;
+    padding:8px 18px;
+    border-radius:30px;
+    display:inline-block;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.appointment-right h3{
+    color:#0d330e;
+}
+
+.details-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.detail-card,
+.notes-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 3px 12px rgba(29, 75, 29, 0.8);
+    color: #0d330e;
+}
+
+.detail-card h3,
+.notes-card h3{
+    color:#0d330e;
+    margin-bottom:18px;
+    border-bottom:2px solid rgba(13,51,14,.2);
+    padding-bottom:10px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid rgba(13,51,14,.15);
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.notes-title{
+    margin-top:25px;
+}
+
+.notes-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+</style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="pic/abstract-wings-cross-healthcare-icon_1034893-5577.jpg" alt="">
+                <span>HealthCare</span>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="doctors.html">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Doctors
+                    </a>
+                </li>
+                <li>
+                    <a href="patients.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Patients
+                    </a>
+                </li>
+                <li>
+                    <a href="appointment.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Appointments
+                    </a>
+                </li>
+                <li>
+                    <a href="patients.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="page-header">
+                <h2>Appointment Details</h2>
+                <p>Home > Appointments > View Appointment</p>
+            </div>
+            <div class="appointment-overview">
+            
+                <div class="appointment-left">
+            
+                    <div class="avatar">
+                        AK
+                    </div>
+            
+                    <div class="patient-details">
+                        <h2>Ekram Jalali</h2>
+                        <p>Patient ID : #PT006</p>
+                        <p>Dr. John Smith </p>
+                    </div>
+            
+                </div>
+            
+                <div class="appointment-right">
+            
+                    <div class="status">
+                        Pending
+                    </div>
+            
+                    <h3>12 July 2026</h3>
+                    <p>9:00 AM</p>
+            
+                </div>
+            
+            </div>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Patient Information</h3>
+                    <div class="info-row">
+                        <span>Gender</span>
+                        <strong>Male</strong>
+                    </div>
+            
+                    <div class="info-row">
+                        <span>Age</span>
+                        <strong>30 Years</strong>
+                    </div>
+            
+                    <div class="info-row">
+                        <span>Phone</span>
+                        <strong>+93700000000</strong>
+                    </div>
+            
+                    <div class="info-row">
+                        <span>Blood Group</span>
+                        <strong>AB+</strong>
+                    </div>
+            
+                </div>
+            
+                <div class="detail-card">
+                    <h3>Appointment Information</h3>
+                    <div class="info-row">
+                        <span>Department</span>
+                        <strong>Cardiology</strong>
+                    </div>
+            
+                    <div class="info-row">
+                        <span>Type</span>
+                        <strong>Regular Checkup</strong>
+                    </div>
+            
+                    <div class="info-row">
+                        <span>Created Date</span>
+                        <strong>10 July 2026</strong>
+                    </div>
+            
+                    <div class="info-row">
+                        <span>Insurance No</span>
+                        <strong>INS-2026-445</strong>
+                    </div>
+            
+                </div>
+            
+            </div>
+            <div class="notes-card">
+                <h3>Reason For Visit</h3>
+                <p>
+                    Patient complains of chest pain and requires a full cardiac examination.
+                </p>
+            
+                <h3 class="notes-title">Doctor Notes</h3>
+            
+                <p>
+                    ECG and blood pressure tests are recommended before consultation.
+                </p>
+            
+            </div>
+        </main>
+
+</body>
+</html>
