@@ -81,6 +81,12 @@ body{
     background:#ffefb3;
     color:#0d330e;
 }
+.menu li a:hover,
+.menu li a.active{
+    background: #ffefb3;
+    color: #0d330e;
+    font-weight: 600;
+}
 
 .menu li a i{
     width:20px;
@@ -146,8 +152,12 @@ body{
     text-align:center;
     box-shadow:0 3px 12px rgba(0,0,0,.08);
     border-top:5px solid #0d330e;
+    transition: all 0.3s ease;
 }
-
+.report-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
 .report-card i{
     font-size:28px;
     color:#0d330e;
@@ -163,6 +173,9 @@ body{
 .report-card p{
     color:#666;
     font-size:14px;
+}
+.report-card:hover i{
+    transform: scale(1.08);
 }
 
 .table-toolbar{
@@ -216,15 +229,19 @@ body{
     overflow:hidden;
     box-shadow:0 3px 12px rgba(0,0,0,.08);
     overflow-x:auto;
+    
 }
 
 table{
     width:100%;
     border-collapse:collapse;
+    
+    
 }
 
 thead{
     background:#0d330e;
+
 }
 
 thead th{
@@ -238,10 +255,15 @@ tbody td{
     padding:15px;
     border-bottom:1px solid #eee;
     font-size:14px;
+    
 }
-
+tbody tr{
+    transition:all 0.3s ease;
+}
 tbody tr:hover{
-    background:#f8fff8;
+    background: #eeeeee;
+    transform:translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .patient-info{
@@ -266,7 +288,7 @@ tbody tr:hover{
     box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
 }
 
-.active{
+.active1{
     background:#dff5e1;
     color:#0d330e;
     padding:6px 12px;
@@ -377,7 +399,7 @@ tbody tr:hover{
             </li>
 
             <li>
-                <a href="patients.html">
+                <a class="active" href="patients.html">
                     <i class="fa-solid fa-bed"></i>
                     Patients
                 </a>
@@ -522,7 +544,7 @@ tbody tr:hover{
                                 <td>Dr. John Smith</td>
             
                                 <td>
-                                    <span class="active">Admitted</span>
+                                    <span class="active1">Admitted</span>
                                 </td>
             
                                 <td class="actions">
@@ -578,7 +600,7 @@ tbody tr:hover{
                                 <td>Dr. Michael Lee</td>
             
                                 <td>
-                                    <span class="active">Admitted</span>
+                                    <span class="active1">Admitted</span>
                                 </td>
             
                                 <td class="actions">
@@ -606,7 +628,7 @@ tbody tr:hover{
                                 <td>Dr. Emma Brown</td>
             
                                 <td>
-                                    <span class="active">Admitted</span>
+                                    <span class="active1">Admitted</span>
                                 </td>
             
                                 <td class="actions">

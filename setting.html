@@ -123,13 +123,22 @@ body{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:20px;
+    
 }
+
 
 .settings-card{
     background:white;
     border-radius:20px;
     padding:25px;
     box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:all 0.3s ease;
+    
+}
+.settings-card:hover{
+    background: hsl(0, 0%, 100%);
+    transform:translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgb(238, 238, 238);
 }
 
 .settings-card h3{
@@ -139,12 +148,14 @@ body{
 
 .form-group{
     margin-bottom:15px;
+    transition:all 0.3s ease;
 }
 
 .form-group label{
     display:block;
     margin-bottom:8px;
     color:#555;
+    
 }
 
 .form-group input{
@@ -152,6 +163,12 @@ body{
     padding:12px;
     border:1px solid #ddd;
     border-radius:10px;
+    
+}
+.form-group:hover{
+    background: hsl(0, 0%, 100%);
+    transform:translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgb(238, 238, 238);
 }
 
 .admin-profile{
@@ -176,6 +193,7 @@ body{
     border-radius:10px;
     cursor:pointer;
 }
+
 
 .toggle-item{
     display:flex;
@@ -307,7 +325,7 @@ body{
                 </li>
     
                 <li>
-                    <a href="setting.html">
+                    <a class="active" href="setting.html">
                         <i class="fa-solid fa-gear"></i>
                         Settings
                     </a>
