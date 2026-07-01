@@ -97,6 +97,9 @@ body{
 }
 .profile-header{
     margin-bottom:25px;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
 .doctor-profile-card{
@@ -106,6 +109,7 @@ body{
     display:flex;
     gap:25px;
     box-shadow:0 3px 12px rgba(29, 75, 29, 0.8);
+    transition: all 0.3s ease;
 }
 
 .doctor-profile-card img{
@@ -118,6 +122,7 @@ body{
 .doctor-details{
     flex:1;
 }
+
 
 .doctor-details h2{
     color:#0d330e;
@@ -160,6 +165,7 @@ body{
     border-radius:15px;
     border-top:5px solid #0d330e;
     box-shadow:0 3px 12px rgba(0,0,0,.08);
+    transition: all 0.3s ease;
 }
 
 .stat-card h3{
@@ -179,6 +185,7 @@ body{
     border-radius:15px;
     padding:20px;
     box-shadow:0 3px 12px rgba(29, 75, 29, 0.8);
+    transition: all 0.3s ease;
 }
 
 .patients-section h3,
@@ -210,6 +217,27 @@ td{
     padding:15px;
     border-radius:10px;
     margin-bottom:12px;
+    transition: all 0.3s ease;
+}
+.doctor-profile-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+.stat-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+.appointment-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+.patients-section:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+.schedule-section:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
 }
 </style>
 </head>
@@ -269,9 +297,10 @@ td{
             <div class="profile-header">
 
                 <div class="doctor-profile-card">
+                    
             
                     <img src="pic/happy-doctor-with-stethoscope-doctor-isolated-white-medical-doctor-man-with-thumb-up_474717-99682.jpg" alt="Doctor">
-            
+                    
                     <div class="doctor-details">
             
                         <h2>Dr. John Smith</h2>
@@ -316,6 +345,7 @@ td{
                             </div>
             
                         </div>
+                        
             
                     </div>
             

@@ -80,6 +80,12 @@ body{
     color:#0d330e;
 }
 
+.menu li a:hover,
+.menu li a.active{
+    background: #ffefb3;
+    color: #0d330e;
+    font-weight: 600;
+}
 .menu li a i{
     width:20px;
     text-align:center;
@@ -124,7 +130,6 @@ body{
 .add-payment-btn:hover{
     transform:translateY(-2px);
 }
-
 .payment-cards{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -133,35 +138,39 @@ body{
 }
 
 .payment-card{
-    background:white;
-    border-radius:18px;
+    background:#fff;
+    border-radius:15px;
     padding:20px;
     text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
     border-top:5px solid #0d330e;
-    transition:all 0.3s ease;
+    transition: all 0.3s ease;
 }
-
+.payment-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
 .payment-card i{
-    font-size:32px;
+    font-size:28px;
     color:#0d330e;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .payment-card h3{
     color:#0d330e;
-    margin-bottom:5px;
     font-size:28px;
+    margin-bottom:5px;
 }
 
 .payment-card p{
-    color:#777;
+    color:#666;
+    font-size:14px;
 }
-.payment-card:hover{
-    
-    transform:translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.payment-card:hover i{
+    transform: scale(1.08);
 }
+
+
 
 
 .payment-toolbar{
@@ -206,42 +215,29 @@ body{
     border-radius:12px;
     cursor:pointer;
 }
-/*
-.invoice-table{
 
+.invoice-section h3 ,
+.payment-section h3 ,
+.tax-section h3{
+    color: #0d330e;
+    font-size: 22px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e8f6e9;
+    text-align: center;
 }
-.table1{
+.invoice-section i ,
+.payment-section i ,
+.tax-section i{
+    margin-right: 15px;
+    color: #0d330e;
+}
 
-}
-.budage{
-
-}
-.by-success{
-
-}
-.budage-success{
-
-}
-.payment-section{
-
-}
-.table2{
-
-}
-.tax-section{
-
-}
-.table3{
-
-}
-.active-status{
-
-}
-*/
 .invoice-section .table1{
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 12px;
+    border-spacing: 0 7px;
     border-radius: 20px;
 }
 .invoice-section .table1 th{
@@ -260,6 +256,7 @@ body{
 .invoice-section .table1 tbody tr{
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    
 }
 .invoice-section .table1 tbody tr:hover{
     background: #eeeeee;
@@ -299,33 +296,41 @@ body{
 .tax-section .table3{
     width: 100%;
     border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    text-align: center;
 }
-.tax-section .table3 th{
-    background: #f8faf9;
-    color: #0d330e;
-    padding: 18px;
-    text-align: left;
+
+.tax-section .table3 thead th{
+    background: #0d330e; 
+    color: #ffffff;
+    padding: 15px 16px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-right: 1px solid #1f2937;
 }
+
 .tax-section .table3 tbody td{
-    padding: 20px;
-    background: #0d330e;
-    color: #f8faf9;
-    border-bottom: 1px solid #ffffff;
-    transition: all 0.3s ease;
-}
-
-.tax-section .table3 tbody tr{
-    border-left: 5px solid transparent;
-    transition: all 0.3s ease;
-}
-.tax-section .table3 tbody tr:hover{
-    background: #f5faf8;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #0d330e;
     border-bottom: 1px solid #0d330e;
-    transform:translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-right: 1px solid #0d330e;
 }
 
+.tax-section .table3 tbody tr:hover{
+    background: transparent;
+}
 
+.tax-section .table3 th:last-child,
+.tax-section .table3 td:last-child{
+    border-right: none;
+}
+
+.tax-section .table3 tbody td{
+    vertical-align: middle;
+}
 
 
 
@@ -495,7 +500,8 @@ body{
         
             </div>
             <section class="invoice-section">
-                <h3>Invoice</h3>
+                <h3><i class="fa-solid fa-file-invoice"></i>
+                    Invoice</h3>
             <table class="table1">
               <thead>
                 <tr>
@@ -568,7 +574,7 @@ body{
             </table>
             </section>
             <section class="payment-section">
-                <h3>payments</h3>
+                <h3><i class="fa-solid fa-credit-card"></i>payments</h3>
             <table class="table2">
                 <thead>
                   <tr>
@@ -619,7 +625,7 @@ body{
               </table>
             </section>
             <section class="tax-section">
-                <h3>Taxes</h3>
+                <h3><i class="fa-solid fa-percent"></i>Taxes</h3>
                 <table class="table3">
                     <thead>
                         <tr>

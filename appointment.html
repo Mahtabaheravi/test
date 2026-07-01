@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Management System</title>
 
-    <link rel="stylesheet" href="style.css">
+   
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -49,6 +49,7 @@ body{
 .logo img{
     width:50px;
     height:50px;
+    border-radius: 50%;
     object-fit:contain;
 }
 
@@ -81,6 +82,12 @@ body{
     color:#0d330e;
 }
 
+.menu li a:hover,
+.menu li a.active{
+    background: #ffefb3;
+    color: #0d330e;
+    font-weight: 600;
+}
 .menu li a i{
     width:20px;
     text-align:center;
@@ -152,6 +159,13 @@ body{
 .appointment-card h3{
     color:#0d330e;
     font-size:28px;
+}
+.appointment-card p{
+    color:#666;
+    font-size:14px;
+}
+.appointment-card:hover i{
+    transform: scale(1.08);
 }
 
 .appointment-toolbar{
